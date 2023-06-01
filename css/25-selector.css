@@ -4,6 +4,13 @@
 * {
   color: inherit;
 }
+
+/* 가상 요소 선택자 */
+::selection {
+  background: #373e6a;
+  color: hotpink;
+}
+
 /* 상속과 겹침 */
 body {
   font-family: "SUIT";
@@ -19,13 +26,59 @@ body {
   text-shadow: 4px 4px 3px #77f;
 }
 
+.align {
+  text-align: center;
+}
+
 ul.menu{
 	margin: 0;
 	padding-left: 0;
-  color: #f00;
+  color: #0f0;
 }
 
 /* 아이디 선택자 : 한번만 사용 가능*/
 #demo {
   border: red 5px solid;
+}
+
+/* 속성 선택자 */
+/* .menu라는 속성을 가지는 요소 중 하이퍼링크로 .html로 끝나는 경로를 가지는 a태그
+.html 에서 . 없어도 가능하나 확장자임을 나타내주기 위해*/
+.menu a[href$=".html"] {
+  background-color: blue;
+}
+
+/* 선택자 목록 */
+.fency, .menu{
+  font-size: 24px;
+}
+
+/* 가상 요소 선택자 */
+/* 가상으로 text 삼입(content 필수). ctrl+a 시 선택 되지 X
+before, after은 자식요소. 꼭 붙여 적어야함 */
+.align::before{
+  content: "이전 요소";
+}
+
+.align::after{
+  content: "다음 요소";
+}
+
+/* 가상 클래스 */
+/* :root의 경우 최상위에 변수 선언 */
+
+/* 구조 선택자: css에서는 1부터 시작... */
+/* .menu li:nth-child(-n+2), .menu li:nth-child(n+7) */
+.menu li:nth-child(odd){
+  color: yellow;
+}
+
+/* 마우스 올리면 작동 */
+.menu a:hover{
+  border: 5px solid orange;
+}
+
+h1.menu:hover,
+h1.menu:focus{
+  background-color: pink;
 }

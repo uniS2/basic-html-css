@@ -10,12 +10,16 @@ html {
 body {
   font-size: 1rem;
   font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 700;
+  font-family: 'Noto Serif KR', serif;
 }
 
 /* 상속 받기 때문에 *됨 */
 h1 {
   font-size: 3em;
+}
+
+div{
+  font-size: 4px;
 }
 
 /* m은 상속 -> line-height는 숫자로 사용 */

@@ -1,14 +1,25 @@
-body {
-  font-family: "SUIT";
-  font-weight: 300;
+/* 폰트 사이즈 16 기본
+0.625em = 10px
+em은 해당 요소의 font-size에 비례해서 커짐 */
+html {
+  font-size: 0.625em;
 }
 
-ul {
-  border: 1px solid #aaa;
-  height: 1000px;
-  background-repeat: no-repeat;
-  background-image: url("../images/sun.png"), url("../images/cloud.png"),
-    url("../images/tree.png");
-  background-size: 100px 100px, 450px 150px, 350px 600px;
-  background-position: 250px 0, 200px 0, 0 0;
+/* rem은 루트만 기준으로 계산. 해당 요소의 font-size 속성값은 전혀 중요하지 않다 */
+/* family group 잊지 않기 */
+body {
+  font-size: 1rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+}
+
+/* 상속 받기 때문에 *됨 */
+h1 {
+  font-size: 3em;
+}
+
+/* m은 상속 -> line-height는 숫자로 사용 */
+p {
+  font-size: 2em;
+  line-height: 1.5;
 }
